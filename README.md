@@ -1,16 +1,13 @@
-# Stage
+### Stage de master 1 Bio-informatique
 Travaux effectués durant mon stage : L’assemblage et annotation du génome mitochondrial de l’Apron du Rhône (Zingel asper)
 
-# 1
-## 2
-### 3 
+## Assemblage du genome mitochondrial de *Zingel asper*(Instalation et fonctionnement des assembleurs):
 
-liste : 
-- 1
-- 2 
+#MITOBIM : https://github.com/chrishah/MITObim
 
-*gras*
+#NOVOPlasty : https://github.com/ndierckx/NOVOPlasty
 
-```
-dgfhgf
-```
+#Norgal : https://bitbucket.org/kosaidtu/norgal
+
+
+## Annotation et pylogénie (voir annexe)
