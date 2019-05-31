@@ -1,0 +1,39 @@
+
+TUTO 1
+
+ln -s /Bureau/MITObim-master/testdata1/DNA25_merge.fastq reads.fastq 
+
+ln -s /Bureau/MITObim-master/testdata1/Sander_vitreus.fa reference.fa
+
+
+echo -e "\n#manifest file for basic mapping assembly with illumina data using MIRA 4\n\nproject = initial-mapping-testpool-to-Sander-mt\n\njob=genome,mapping,accurate\n\nparameters = -NW:mrnl=0 -AS:nop=1 SOLEXA_SETTINGS -CO:msr=no\n\nreadgroup\nis_reference\ndata = reference.fa\nstrain = Sander-mt-genome\n\nreadgroup = reads\ndata = reads.fastq\ntechnology = solexa\nstrain = testpool\n" > manifest.conf
+
+
+mira manifest.confg
+
+perl MITObim.pl -start 1 -end 10 -sample testpool -ref Sander-mt-genome -readpool tuto1_apron/reads.fastq -maf tuto1_apron/initial-mapping-testpool-to-Sander-mt_assembly/initial-mapping-testpool-to-Sander-mt_d_results/initial-mapping-testpool-to-Sander-mt_out.maf &> log
+
+
+
+
+TUTO 2
+
+perl MITObim.pl -start 1 -end 10 -sample testpool -ref Sander-mt-genome -readpool tuto2_apron/reads.fastq --quick tuto2_apron/Sander_mt_genome.fasta &> log
+
+
+
+
+
+TUTO 3
+
+
+/Bureau/MITObim-master/MITObim.pl -sample testpool -ref Tthymallus-COI -readpool ~/PATH/TO/testdata1/Tthymallus-150bp-300sd50-interleaved.fastq --quick ~/PATH/TO/testdata1/Tthymallus-COI-partial-HQ961018.fasta -end 100 --clean &> log
+
+
+perl MITObim.pl -sample testpool -ref Z_asper_COI -readpool tuto3_apron/DNA25_F.fastq --quick tuto3_apron/Z_asper_COI.fasta -end 50 --clean &> log
+
+
+ln -s DNA25_F.fastq reads.fastq
+ln -s Z_asper_COI.fa reference1.fa
+
+echo -e "\n#manifest1 file for basic mapping assembly with illumina data using MIRA 4\n\nproject = initial-mapping-testpool-to-Z_asper_COI n\njob=genome,mapping,accurate\n\nparameters = -NW:mrnl=0 -AS:nop=1 SOLEXA_SETTINGS -CO:msr=no\n\nreadgroup\nis_reference\ndata = reference1.fa\nstrain = Z_asper_COI\n\nreadgroup = reads\ndata = reads.fastq\ntechnology = solexa\nstrain = testpool\n" > manifest1.conf
