@@ -1,0 +1,1 @@
+python norgal.py -i f.fq r.fq -o norgal_output --blast
