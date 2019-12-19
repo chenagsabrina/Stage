@@ -10,4 +10,4 @@ Travaux effectués durant mon stage : L’assemblage et annotation du génome mi
 #Norgal : https://bitbucket.org/kosaidtu/norgal
 
 
-### Annotation et pylogénie (voir annexe)
+### Annotation et phylogénie (voir annexe)
